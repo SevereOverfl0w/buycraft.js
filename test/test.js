@@ -10,9 +10,10 @@ describe('Buycraft', function(){
   describe('#rest()', function(){
     it('should return an array when action is categories', function(done){
       buycraft.rest({action: 'categories'}, function(err, response){
+        if(err) throw err;
         expect(response.payload).to.be.an.instanceof(Array);
         done();
       }) 
     })
-  })
+  });
 });
