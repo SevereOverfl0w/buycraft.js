@@ -4,7 +4,7 @@
   "description": "A buycraft api wrapper",
   "main": "lib/index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha"
+    "test": "./node_modules/mocha/bin/mocha --require blanket --reporter mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/SevereOverfl0w/buycraft.js",
   "dependencies": {
+    "blanket": "^1.1.6",
     "cheerio": "^0.18.0",
     "debug": "^2.1.1",
     "lodash": "^2.4.1",
