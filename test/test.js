@@ -39,6 +39,7 @@ describe('Buycraft', function(){
       })
     })
 
+
     it('should throw error when storeURL is not set.', function(){
       var storelessBC = new Buycraft();
       expect(function(){
@@ -56,6 +57,14 @@ describe('Buycraft', function(){
         if(err) throw err;
         expect(scraped).to.have.a.property('price').that.match(/7.49 USD/i)
         expect(scraped).to.have.a.property('name').that.match(/30 Days/i);
+        done();
+      })
+    })
+
+    it('should find premium category on IC', function(done){
+      icBuycraft.scrape('/category/297535', function(err, scraped){
+        if(err) throw err;
+        expect(scraped).to.have.deep.property('meta.name').that.equals('Premium');
         done();
       })
     })
