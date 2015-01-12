@@ -33,3 +33,7 @@ For example:
 ```
 $ env BUYCRAFT_KEY="0a0000000a00000000000aa0ad00000000aaa0a0" STORE_URL="https://your-store-here.buycraft.net" mocha -Cd
 ```
+
+### Sponsor
+This is available thanks to
+![Isles Softworks](http://i.imgur.com/cO2IN85.png)
