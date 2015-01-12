@@ -3,20 +3,23 @@ var Buycraft = require('../lib/');
 
 
 describe('Buycraft', function(){
+  var secret = process.env.BUYCRAFT_KEY || '';
   var buycraft = new Buycraft({
-    secret: process.env.BUYCRAFT_KEY,
+    secret: secret,
     storeURL: process.env.STORE_URL || 'https://islandclash.buycraft.net',
   });
 
-  describe('#rest()', function(){
-    it('should return an array when action is categories', function(done){
-      buycraft.rest({action: 'categories'}, function(err, response){
-        if(err) throw err;
-        expect(response.payload).to.be.an.instanceof(Array);
-        done();
-      }) 
-    })
-  });
+  if (secret){
+    describe('#rest()', function(){
+      it('should return an array when action is categories', function(done){
+        buycraft.rest({action: 'categories'}, function(err, response){
+          if(err) throw err;
+          expect(response.payload).to.be.an.instanceof(Array);
+          done();
+        }) 
+      })
+    });
+  }
 
   describe('#scrape()', function(){
     it('should throw an error when scraping unknown url', function(done){
