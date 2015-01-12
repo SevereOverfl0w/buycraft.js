@@ -39,6 +39,15 @@ describe('Buycraft', function(){
       })
     })
 
+    it('should throw error when storeURL is not set.', function(){
+      var storelessBC = new Buycraft();
+      expect(function(){
+        storelessBC.scrape('/', function(err, scraped){
+          if(err) throw err;
+        })
+      }).to.throw('storeURL');
+    });
+
     var icBuycraft = new Buycraft({
       storeURL: 'https://islandclash.buycraft.net'
     })
