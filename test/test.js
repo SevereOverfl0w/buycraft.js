@@ -38,5 +38,17 @@ describe('Buycraft', function(){
         done();
       })
     })
+
+    var icBuycraft = new Buycraft({
+      storeURL: 'https://islandclash.buycraft.net'
+    })
+    it('should get 30Days:7.49USD when scraping a /package/884110 on IC.', function(done){
+      icBuycraft.scrape('/package/884110', function(err, scraped){
+        if(err) throw err;
+        expect(scraped).to.have.a.property('price').that.match(/7.49 USD/i)
+        expect(scraped).to.have.a.property('name').that.match(/30 Days/i);
+        done();
+      })
+    })
   });
 });
