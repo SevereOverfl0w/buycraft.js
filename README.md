@@ -1,4 +1,6 @@
 # buycraft.js
+[![Build Status](https://travis-ci.org/SevereOverfl0w/buycraft.js.svg?branch=master)](https://travis-ci.org/SevereOverfl0w/buycraft.js)
+[![Coverage Status](https://img.shields.io/coveralls/SevereOverfl0w/buycraft.js.svg)](https://coveralls.io/r/SevereOverfl0w/buycraft.js)
 A buycraft api wrapper for javascript.
 
 ## Usage
