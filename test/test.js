@@ -5,7 +5,7 @@ var Buycraft = require('../lib/');
 describe('Buycraft', function(){
   var buycraft = new Buycraft({
     secret: process.env.BUYCRAFT_KEY,
-    storeURL: process.env.STORE_URL,
+    storeURL: process.env.STORE_URL || 'https://islandclash.buycraft.net',
   });
 
   describe('#rest()', function(){
