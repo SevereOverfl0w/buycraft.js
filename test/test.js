@@ -52,11 +52,11 @@ describe('Buycraft', function(){
     var icBuycraft = new Buycraft({
       storeURL: 'https://islandclash.buycraft.net'
     })
-    it('should get 30Days:7.49USD when scraping a /package/884110 on IC.', function(done){
-      icBuycraft.scrape('/package/884110', function(err, scraped){
+    it('should get Pouch/500 when scraping a /package/1076396 on IC.', function(done){
+      icBuycraft.scrape('/package/1076396', function(err, scraped){
         if(err) throw err;
-        expect(scraped).to.have.a.property('price').that.match(/7.49 USD/i)
-        expect(scraped).to.have.a.property('name').that.match(/30 Days/i);
+        expect(scraped).to.have.a.property('description').that.contain(500)
+        expect(scraped).to.have.a.property('name').that.match(/Pouch of Gold/i);
         done();
       })
     })
