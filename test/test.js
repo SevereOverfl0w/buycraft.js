@@ -72,8 +72,8 @@ describe('Buycraft', function(){
     it('should parse the gold category on IC and find a pouch', function(done){
       icBuycraft.scrape('/category/371012', function(err, scraped){
         if(err) throw err;
-        expect(scraped).to.have.property('packages').that.is.an('array');
-        expect(scraped.packages[0]).to.have.property('name').that.contain('Pouch')
+        expect(scraped.meta).to.have.property('packages').that.is.an('array');
+        expect(scraped.meta.packages[0]).to.have.property('name').that.contain('Pouch')
         done();
       })
     })
